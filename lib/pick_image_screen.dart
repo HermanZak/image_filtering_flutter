@@ -23,15 +23,17 @@ class _PickImageScreenState extends State<PickImageScreen> {
     fileName = basename(imageFile.path);
     var image = imageLib.decodeImage(imageFile.readAsBytesSync());
     image = imageLib.copyResize(image, width: 600);
-    Map imagefile = await Navigator.push(
+    Map imageFileFiltered = await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) {},
       ),
     );
-    if (imagefile != null && imagefile.containsKey('image_filtered')) {
+
+    if (imageFileFiltered != null &&
+        imageFileFiltered.containsKey('image_filtered')) {
       setState(() {
-        imageFile = imagefile['image_filtered'];
+        imageFile = imageFileFiltered['image_filtered'];
       });
       print(imageFile.path);
     }
