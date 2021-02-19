@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import './pick_image_screen.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
