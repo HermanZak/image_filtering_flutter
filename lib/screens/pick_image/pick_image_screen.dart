@@ -21,7 +21,8 @@ class _PickImageScreenState extends State<PickImageScreen> {
   File imageFile;
 
   Future<void> _getImage(BuildContext context) async {
-    imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+    var pickedFile = await ImagePicker().getImage(source: ImageSource.gallery);
+    imageFile = File(pickedFile.path);
     fileName = basename(imageFile.path);
     var image = imageLib.decodeImage(imageFile.readAsBytesSync());
     image = imageLib.copyResize(image, width: 600);
@@ -33,6 +34,7 @@ class _PickImageScreenState extends State<PickImageScreen> {
           filters: filters,
           image: image,
           filename: fileName,
+          fit: BoxFit.contain,
         ),
       ),
     );
@@ -55,8 +57,27 @@ class _PickImageScreenState extends State<PickImageScreen> {
       body: Center(
         child: Container(
           child: imageFile == null
-              ? Center(
-                  child: Text(AppStrings.noImageSelected),
+              ? Align(
+                  alignment: Alignment.center,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.do_not_disturb,
+                        size: 40,
+                      ),
+                      Divider(
+                        height: 10,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        AppStrings.noImageSelected,
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 )
               : Image.file(imageFile),
         ),

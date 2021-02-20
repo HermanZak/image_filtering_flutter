@@ -11,10 +11,13 @@ class PickImageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
+    return FloatingActionButton.extended(
+      label: Text(
+        AppStrings.fabPickImageTooltip,
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
       onPressed: () => _getImage(context),
-      tooltip: AppStrings.fabPickImageTooltip,
-      child: Icon(Icons.add_a_photo),
+      icon: Icon(Icons.add_a_photo),
       backgroundColor: Colors.red,
     );
   }
