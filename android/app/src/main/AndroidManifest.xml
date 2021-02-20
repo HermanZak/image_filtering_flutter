@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.image_filtering_flutter">
    <application
-        android:label="image_filtering_flutter"
+        android:label="Filtimage"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
