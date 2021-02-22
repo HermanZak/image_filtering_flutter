@@ -1,16 +1,16 @@
-# image_filtering_flutter
+# Filtimage
 
-Image filtering application written in Flutter
+Image filtering mobile application written in Flutter
 
-## Getting Started
+## Possibilities
 
-This project is a starting point for a Flutter application.
+Pre-requirements:
+**You need to allow application access to your media storage!**
 
-A few resources to get you started if this is your first Flutter project:
+### Application allows you to:
+- Pick an image from your smartphone
+- Apply any filter from the list to this image
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### UI/UX:
+- User-friendly design
+- Responsible layout for portrait and landscape orientation
